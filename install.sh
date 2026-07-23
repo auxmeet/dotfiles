@@ -68,5 +68,5 @@ cp wall.jpg ~/wallpapers/
 
 # Копирование dotfiles
 echo -e "${YELLOW}Копирование конфигов...${NC}"
-cp -r dunst polybar picom i3 kitty rofi "$HOME/.config/"
+sudo cp -r dunst polybar picom i3 kitty rofi "$HOME/.config/"
 echo -e "${GREEN}✓ Все готово!${NC}"
