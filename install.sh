@@ -34,7 +34,7 @@ pacman -Syu --noconfirm
 echo -e "${YELLOW}Установка утилит...${NC}"
 for package in "${PACKAGESPACMAN[@]}"; do
     echo "Установка $package..."
-    pacman -S "$package" --noconfirm
+    sudo pacman -S "$package" --noconfirm
     if [ $? -eq 0 ]; then
         echo -e "${GREEN}✓ $package установлен${NC}"
     else
