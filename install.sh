@@ -48,6 +48,8 @@ for package in "${PACKAGESPACMAN[@]}"; do
     fi
 done
 
+exit 
+
 PACKAGESPARU=(
     "picom-ftlabs-git"
 )
