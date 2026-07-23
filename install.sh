@@ -50,27 +50,18 @@ for package in "${PACKAGES[@]}"; do
     fi
 done
 
-echo -e "${YELLOW}Установка утилит...${NC}"
-for package in "${PACKAGESPARU[@]}"; do
-    echo "Установка $package..."
-    paru -S "$package" --noconfirm
-    if [ $? -eq 0 ]; then
-        echo -e "${GREEN}✓ $package установлен${NC}"
-    else
-        echo -e "${RED}✗ Ошибка при установке $package${NC}"
-    fi
-done
-
+echo -e "${YELLOW}У вас уже установлен пакет paru!${NC}"
+echo -e "${YELLOW}Выполните paru -S picom-ftlabs-git${NC}"
 # Копирование dotfiles
 echo -e "${YELLOW}Копирование конфигов...${NC}"
-cp bpswm ~/.config/bspwm/
-cp dunst ~/.config/dunst/
-cp polybar ~/.config/polybar/
-cp picom ~/.config/picom/
-cp sxhkd ~/.config/sxhkd/
-cp kitty ~/.config/kitty/
-cp fastfetch ~/.config/fastfetch/
-cp rofi ~/.config/rofi/
+cp -r bpswm ~/.config/bspwm/
+cp -r dunst ~/.config/dunst/
+cp -r polybar ~/.config/polybar/
+cp -r picom ~/.config/picom/
+cp -r sxhkd ~/.config/sxhkd/
+cp -r kitty ~/.config/kitty/
+cp -r fastfetch ~/.config/fastfetch/
+cp -r rofi ~/.config/rofi/
 # Добавьте свои файлы
 
 echo -e "${GREEN}✓ Все готово!${NC}"
