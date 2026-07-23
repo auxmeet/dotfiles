@@ -62,7 +62,6 @@ echo -e "${YELLOW}Установка утилит...${NC}"
     else
         echo -e "${RED}✗ Ошибка при установке picom-ftlabs-git${NC}"
     fi
-done
 
 # Копирование dotfiles
 echo -e "${YELLOW}Копирование конфигов...${NC}"
