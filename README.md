@@ -7,3 +7,5 @@ git clone https://github.com/auxmeet/dotfiles.git
 cd dotfiles 
 
 sudo bash install.sh
+
+bash other.sh
