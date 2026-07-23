@@ -49,20 +49,6 @@ for package in "${PACKAGES[@]}"; do
     fi
 done
 
-# Обновление пакетов
-echo -e "${YELLOW}Обновление paru...${NC}"
-paru -Syu --noconfirm
-
-# Установка утилит
-echo -e "${YELLOW}Установка утилит...${NC}"
-    echo "Установка picom-ftlabs-git..."
-    paru -S picom-ftlabs-git --noconfirm
-    if [ $? -eq 0 ]; then
-        echo -e "${GREEN}✓ picom-ftlabs-git установлен${NC}"
-    else
-        echo -e "${RED}✗ Ошибка при установке picom-ftlabs-git${NC}"
-    fi
-
 # Копирование dotfiles
 echo -e "${YELLOW}Копирование конфигов...${NC}"
 cp -r bspwm ~/.config/bspwm/
