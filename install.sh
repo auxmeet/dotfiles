@@ -27,11 +27,6 @@ PACKAGES=(
     "paru"
 )
 
-
-PACKAGESPARU=(
-    "picom-ftlabs-git"
-)
-
 # Проверка, запущен ли как root
 if [[ $EUID -ne 0 ]]; then
    echo -e "${RED}Скрипт должен быть запущен с sudo${NC}"
@@ -54,20 +49,18 @@ for package in "${PACKAGES[@]}"; do
     fi
 done
 
-
 # Обновление пакетов
-echo -e "${YELLOW}Обновление pacman...${NC}"
+echo -e "${YELLOW}Обновление paru...${NC}"
 paru -Syu --noconfirm
 
 # Установка утилит
 echo -e "${YELLOW}Установка утилит...${NC}"
-for package in "${PACKAGESPARU[@]}"; do
-    echo "Установка $package..."
-    pacman -S "$package" --noconfirm
+    echo "Установка picom-ftlabs-git..."
+    pacman -S picom-ftlabs-git --noconfirm
     if [ $? -eq 0 ]; then
-        echo -e "${GREEN}✓ $package установлен${NC}"
+        echo -e "${GREEN}✓ picom-ftlabs-git установлен${NC}"
     else
-        echo -e "${RED}✗ Ошибка при установке $package${NC}"
+        echo -e "${RED}✗ Ошибка при установке picom-ftlabs-git${NC}"
     fi
 done
 
@@ -80,8 +73,5 @@ cp -r picom ~/.config/picom/
 cp -r sxhkd ~/.config/sxhkd/
 cp -r kitty ~/.config/kitty/
 cp -r fastfetch ~/.config/fastfetch/
-cp -r rofi ~/.config/rofi/
-echo -e "${YELLOW}Копирование обоев..${NC}"
-mkdir -p ~/wallpapers/
-cp wall.jpg ~/wallpapers/
+cp -r rofi ~/.config/rofi
 echo -e "${GREEN}✓ Все готово!${NC}"
