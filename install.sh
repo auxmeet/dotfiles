@@ -18,6 +18,7 @@ PACKAGES=(
     "kitty"
     "curl"
     "maim"
+    "feh"
     "xclip"
     "fastfetch"
     "xorg-xsetroot"
@@ -62,6 +63,8 @@ cp -r sxhkd ~/.config/sxhkd/
 cp -r kitty ~/.config/kitty/
 cp -r fastfetch ~/.config/fastfetch/
 cp -r rofi ~/.config/rofi/
+echo -e "${YELLOW}Копирование обоев..${NC}"
+cp -r wall.jpg ~/wall/
 # Добавьте свои файлы
 
 echo -e "${GREEN}✓ Все готово!${NC}"
