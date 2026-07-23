@@ -5,6 +5,26 @@ YELLOW='\033[1;33m'
 RED='\033[0;31m'
 NC='\033[0m'
 
+PACKAGES=(
+    "picom-ftlabs-git"
+)
+
+# Обновление пакетов
+echo -e "${YELLOW}Обновление paru...${NC}"
+paru -Syu --noconfirm
+
+# Установка утилит
+echo -e "${YELLOW}Установка утилиты picom-ftlabs-git и обоев${NC}"
+for package in "${PACKAGES[@]}"; do
+    echo "Установка $package..."
+    paru -S "$package" --noconfirm
+    if [ $? -eq 0 ]; then
+        echo -e "${GREEN}✓ $package установлен${NC}"
+    else
+        echo -e "${RED}✗ Ошибка при установке $package${NC}"
+    fi
+done
+
 echo -e "${YELLOW}Установка обоев${NC}"
 
 echo -e "${YELLOW}Копирование обоев..${NC}"
