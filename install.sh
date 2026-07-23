@@ -16,7 +16,7 @@ PACKAGES=(
     "polybar"
     "wget"
     "kitty"
-    "corl"
+    "curl"
     "maim"
     "xclip"
     "fastfetch"
@@ -24,7 +24,7 @@ PACKAGES=(
     "paru"
 )
 
-PACKAGES2=(
+PACKAGESPARU=(
     "picom-ftlabs-git"
 )
 
@@ -51,13 +51,13 @@ for package in "${PACKAGES[@]}"; do
 done
 
 echo -e "${YELLOW}Установка утилит...${NC}"
-for package in "${PACKAGES[@]}"; do
-    echo "Установка $package2..."
-    paru -S "$package2" --noconfirm
+for package in "${PACKAGESPARU[@]}"; do
+    echo "Установка $package..."
+    paru -S "$package" --noconfirm
     if [ $? -eq 0 ]; then
-        echo -e "${GREEN}✓ $package2 установлен${NC}"
+        echo -e "${GREEN}✓ $package установлен${NC}"
     else
-        echo -e "${RED}✗ Ошибка при установке $package2${NC}"
+        echo -e "${RED}✗ Ошибка при установке $package${NC}"
     fi
 done
 
