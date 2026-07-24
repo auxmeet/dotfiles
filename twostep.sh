@@ -11,11 +11,9 @@ PACKAGESPARU=(
     "picom-ftlabs-git"
 )
 
-# Обновление пакетов AUR
 echo -e "${YELLOW}Обновление paru...${NC}"
 paru -Syu --noconfirm
 
-# Установка утилит из AUR (выполняется БЕЗ sudo)
 echo -e "${YELLOW}Установка утилиты picom-ftlabs-git и обоев${NC}"
 for package in "${PACKAGESPARU[@]}"; do
     echo "Установка $package..."
@@ -27,12 +25,10 @@ for package in "${PACKAGESPARU[@]}"; do
     fi
 done
 
-# Копирование обоев в пространство пользователя
 echo -e "${YELLOW}Копирование обоев..${NC}"
 mkdir -p "$HOME/wallpapers/"
 cp wall.jpg "$HOME/wallpapers/"
 
-# Копирование dotfiles БЕЗ использования sudo
 echo -e "${YELLOW}Копирование конфигов...${NC}"
 mkdir -p "$HOME/.config/"
 sudo cp -r bspwm dunst kitty picom polybar rofi sxhkd "$HOME/.config/"
